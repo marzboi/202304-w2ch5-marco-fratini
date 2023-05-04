@@ -51,3 +51,17 @@ describe("Given the function newPush", () => {
     });
   });
 });
+
+describe("Given the function newSome", () => {
+  describe("When given the list of 1, 2, 3, 5 and the callback of even", () => {
+    test("Then it should return true", () => {
+      const array = [1, 2, 3, 5];
+      const even = (element) => element % 2 === 0;
+
+      const expectedResult = true;
+      const resultReturned = index.newSome(array, even);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});

@@ -22,4 +22,16 @@ const newPushButGivesArrayInstead = (array, ...newElement) => {
   return [...openedArray, ...newElement];
 };
 
-export default { newLength, newPush, newPushButGivesArrayInstead };
+const newFind = (array, argument) => {
+  const length = newLength(array);
+
+  for (let index = 0; index < length; index++) {
+    if (array[index] === argument) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+export default { newLength, newPush, newPushButGivesArrayInstead, newFind };

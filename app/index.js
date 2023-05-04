@@ -8,12 +8,18 @@ const newLength = (array) => {
   return position;
 };
 
-const newPush = (array, newElement, ...moreElements) => {
+const newPush = (array, ...newElement) => {
   const openedArray = [...array];
 
-  const newPushedArray = [...openedArray, newElement, ...moreElements];
+  const newPushedArray = [...openedArray, ...newElement];
 
   return newLength(newPushedArray);
 };
 
-export default { newLength, newPush };
+const newPushButGivesArrayInstead = (array, ...newElement) => {
+  const openedArray = [...array];
+
+  return [...openedArray, ...newElement];
+};
+
+export default { newLength, newPush, newPushButGivesArrayInstead };

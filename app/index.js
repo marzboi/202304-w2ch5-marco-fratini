@@ -7,3 +7,5 @@ const newLength = (array) => {
 
   return position;
 };
+
+export default { newLength };

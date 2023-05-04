@@ -1,7 +1,6 @@
 {
   "name": "w2-ch4",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -29,5 +28,9 @@
         ]
       }
     }
+  },
+  "description": "",
+  "dependencies": {
+    "node": "^20.1.0"
   }
 }

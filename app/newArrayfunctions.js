@@ -44,6 +44,17 @@ const newUnshift = (array, ...newElement) => {
   return array.length;
 };
 
+const newShift = (array) => {
+  const originalElements = [...array];
+  array.length = 0;
+
+  for (let index = 1; index < originalElements.length; index++) {
+    array[index - 1] = originalElements[index];
+  }
+
+  return array[0];
+};
+
 const newSome = (array, callBackFunction) => {
   const length = newLength(array);
 
@@ -86,6 +97,7 @@ export default {
   newPushButGivesArrayInstead,
   newPop,
   newUnshift,
+  newShift,
   newSome,
   newFind,
   newFilter,

@@ -249,3 +249,29 @@ describe("Given the function newFindIndex", () => {
     });
   });
 });
+
+describe("Given the function newIncludes", () => {
+  describe("When given the list Cova, Edu, Marco and we are searching for Cova", () => {
+    test("Then it should return true", () => {
+      const names = ["Cova", "Edu", "Marco"];
+      const wordToSearch = "Cova";
+
+      const expectedResult = true;
+      const resultReturned = index.newIncludes(names, wordToSearch);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the list 3, 6, 9, 12, 15 and we are searching for 20", () => {
+    test("Then it should return false", () => {
+      const numbers = [3, 6, 9, 12, 15];
+      const numberToSearch = 20;
+
+      const expectedResult = false;
+      const resultReturned = index.newIncludes(numbers, numberToSearch);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});

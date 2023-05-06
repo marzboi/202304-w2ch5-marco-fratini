@@ -38,7 +38,7 @@ const newUnshift = (array, ...newElement) => {
   array.length = 0;
 
   for (let index = 0; index < elementsToAdd.length; index++) {
-    array[array.length] = elementsToAdd[index];
+    array[index] = elementsToAdd[index];
   }
 
   return array.length;

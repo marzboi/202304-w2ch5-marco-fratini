@@ -18,11 +18,10 @@ const newPush = (array, ...newElement) => {
   return array.length;
 };
 
-const newPushButGivesArrayInstead = (array, ...newElement) => {
-  const openedArray = [...array];
-
-  return [...openedArray, ...newElement];
-};
+const newPushButGivesArrayInstead = (array, ...newElement) => [
+  ...array,
+  ...newElement,
+];
 
 const newSome = (array, callBackFunction) => {
   const length = newLength(array);

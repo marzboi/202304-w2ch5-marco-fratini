@@ -101,6 +101,9 @@ const newFilter = (array, callBackFunction) => {
 
 const newMap = (array, callBackFunction) => {
   let newArrayToReturn = [];
+  if (!callBackFunction) {
+    return [...array];
+  }
 
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
@@ -145,6 +148,19 @@ const newIndexOf = (array, element, position) => {
   return -1;
 };
 
+const newJoin = (array, separator) => {
+  const glue = separator || "";
+  let newString = "";
+  for (let index = 0; index < array.length; index++) {
+    newString += array[index];
+    if (index < array.length - 1) {
+      newString += glue;
+    }
+  }
+
+  return newString;
+};
+
 export default {
   newLength,
   newPush,
@@ -160,8 +176,8 @@ export default {
   newFindIndex,
   newIncludes,
   newIndexOf,
+  newJoin,
 };
 
-const array = [1, 2, 3, 4, 5];
-
-console.log(newIndexOf(array, 3));
+const array = [];
+console.log(newJoin(array, "."));

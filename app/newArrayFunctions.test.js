@@ -301,3 +301,29 @@ describe("Given the function newIndexOf", () => {
     });
   });
 });
+
+describe("Given the function newJoin", () => {
+  describe("When given the names Marco, Antonio and the separator '-'", () => {
+    test("Then it should return Marco-Antonio", () => {
+      const names = ["Marco", "Antonio"];
+      const separator = "-";
+
+      const expectedResult = "Marco-Antonio";
+      const resultReturned = index.newJoin(names, separator);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the name and the separator '.'", () => {
+    test("Then it should return '' ", () => {
+      const names = [];
+      const separator = ".";
+
+      const expectedResult = "";
+      const resultReturned = index.newJoin(names, separator);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});

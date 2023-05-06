@@ -179,6 +179,5 @@ export default {
   newJoin,
 };
 
-const array = ["Marco", "Fratini", "Sanoja"];
-
-console.log(newJoin(array, "-------"));
+const array = [];
+console.log(newJoin(array, "."));

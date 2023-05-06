@@ -130,9 +130,21 @@ describe("Given the function newSome", () => {
   describe("When given the list of 1, 2, 3, 5 and the callback of even", () => {
     test("Then it should return true", () => {
       const array = [1, 2, 3, 5];
-      const even = (element) => element % 2 === 0;
+      const even = (element) => !(element % 2);
 
       const expectedResult = true;
+      const resultReturned = index.newSome(array, even);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the list of 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 and numbers larger than 10 ", () => {
+    test("Then it should return false", () => {
+      const array = [1, 2, 3, 4, 5, 6, 7, 8];
+      const even = (element) => element > 10;
+
+      const expectedResult = false;
       const resultReturned = index.newSome(array, even);
 
       expect(resultReturned).toBe(expectedResult);

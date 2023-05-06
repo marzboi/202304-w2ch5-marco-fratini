@@ -1,3 +1,3 @@
-# w2-ch4-david-ternavsky-marco-fratini
+# 202305-w2ch5-marco-fratini
 
-Una pruebita
+Inplementing functions to recreate native like methods from arrays.

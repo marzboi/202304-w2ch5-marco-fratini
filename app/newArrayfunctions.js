@@ -91,7 +91,7 @@ const newFilter = (array, callBackFunction) => {
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
 
-    if (callBackFunction(element) === true) {
+    if (callBackFunction(element)) {
       newArrayToReturn = createNewArray(newArrayToReturn, element);
     }
   }
@@ -123,14 +123,26 @@ const newFindIndex = (array, callBackFunction) => {
   return -1;
 };
 
-const newIncludes = (array, element) => {
-  for (let index = 0; index < array.length; index++) {
+const newIncludes = (array, element, position) => {
+  let index = position || 0;
+  for (index; index < array.length; index++) {
     if (array[index] === element) {
       return true;
     }
   }
 
   return false;
+};
+
+const newIndexOf = (array, element, position) => {
+  let index = position || 0;
+  for (index; index < array.length; index++) {
+    if (array[index] === element) {
+      return index;
+    }
+  }
+
+  return -1;
 };
 
 export default {
@@ -147,4 +159,9 @@ export default {
   newMap,
   newFindIndex,
   newIncludes,
+  newIndexOf,
 };
+
+const array = [1, 2, 3, 4, 5];
+
+console.log(newIndexOf(array, 3));

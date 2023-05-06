@@ -161,6 +161,17 @@ const newJoin = (array, separator) => {
   return newString;
 };
 
+const newReduce = (array, callBackFunction) => {
+  let finalResult = 0;
+
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    finalResult = callBackFunction(finalResult, element);
+  }
+
+  return finalResult;
+};
+
 export default {
   newLength,
   newPush,
@@ -177,7 +188,20 @@ export default {
   newIncludes,
   newIndexOf,
   newJoin,
+  newReduce,
 };
 
-const array = [];
-console.log(newJoin(array, "."));
+const newReduce = (array, callBackFunction, initialValue) => {
+  let finalResult = initialValue !== undefined ? initialValue : array[0];
+
+  for (
+    let index = initialValue !== undefined ? 0 : 1;
+    index < array.length;
+    index++
+  ) {
+    const element = array[index];
+    finalResult = callBackFunction(finalResult, element);
+  }
+
+  return finalResult;
+};

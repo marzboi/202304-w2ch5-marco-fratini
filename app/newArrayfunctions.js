@@ -18,10 +18,7 @@ const newPush = (array, ...newElement) => {
   return array.length;
 };
 
-const newPushButGivesArrayInstead = (array, ...newElement) => [
-  ...array,
-  ...newElement,
-];
+const createNewArray = (array, ...newElement) => [...array, ...newElement];
 
 const newPop = (array) => {
   if (array.length === 0) {
@@ -78,15 +75,26 @@ const newFind = (array, callBackFunction) => {
 };
 
 const newFilter = (array, callBackFunction) => {
-  const length = newLength(array);
   let newArrayToReturn = [];
 
-  for (let index = 0; index < length; index++) {
+  for (let index = 0; index < array.length; index++) {
     const element = array[index];
 
     if (callBackFunction(element) === true) {
-      newArrayToReturn = newPushButGivesArrayInstead(newArrayToReturn, element);
+      newArrayToReturn = createNewArray(newArrayToReturn, element);
     }
+  }
+
+  return newArrayToReturn;
+};
+
+const newMap = (array, callBackFunction) => {
+  let newArrayToReturn = [];
+
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    const argumentToAdd = callBackFunction(element);
+    newArrayToReturn = createNewArray(newArrayToReturn, argumentToAdd);
   }
 
   return newArrayToReturn;
@@ -95,11 +103,12 @@ const newFilter = (array, callBackFunction) => {
 export default {
   newLength,
   newPush,
-  newPushButGivesArrayInstead,
+  createNewArray,
   newPop,
   newUnshift,
   newShift,
   newSome,
   newFind,
   newFilter,
+  newMap,
 };

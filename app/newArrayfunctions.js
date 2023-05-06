@@ -24,9 +24,24 @@ const newPushButGivesArrayInstead = (array, ...newElement) => [
 ];
 
 const newPop = (array) => {
+  if (array.length === 0) {
+    return undefined;
+  }
+
   const lastElement = array[array.length - 1];
   array.length -= 1;
   return lastElement;
+};
+
+const newUnshift = (array, ...newElement) => {
+  const elementsToAdd = [...newElement, ...array];
+  array.length = 0;
+
+  for (let index = 0; index < elementsToAdd.length; index++) {
+    array[array.length] = elementsToAdd[index];
+  }
+
+  return array.length;
 };
 
 const newSome = (array, callBackFunction) => {
@@ -70,6 +85,7 @@ export default {
   newPush,
   newPushButGivesArrayInstead,
   newPop,
+  newUnshift,
   newSome,
   newFind,
   newFilter,

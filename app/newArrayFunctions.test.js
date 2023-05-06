@@ -199,3 +199,30 @@ describe("Given the function newMap", () => {
     });
   });
 });
+
+describe("Given the function newFindIndex", () => {
+  describe("When given the list 1, 2, 3, 4 and we looking for number larger than 2", () => {
+    test("Then it should return the index 2", () => {
+      const numberList = [1, 2, 3, 4];
+
+      const expectedResult = 2;
+      const resultReturned = index.newFindIndex(numberList, (item) => item > 2);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the list Fu, Marco, Luis, Lu, Sergio and we are looking for words longer than 3", () => {
+    test("Then it should return the index 2", () => {
+      const numberList = ["Fu", "Marco", "Luis", "Lu", "Sergio"];
+
+      const expectedResult = 1;
+      const resultReturned = index.newFindIndex(
+        numberList,
+        (item) => item.length > 3
+      );
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});

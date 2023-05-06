@@ -47,19 +47,17 @@ const newFind = (array, argument) => {
 
 const newFilter = (array, callBackFunction) => {
   const length = newLength(array);
-  const newArrayToReturn = [];
-  let answerToReturn = "";
+  let newArrayToReturn = [];
 
   for (let index = 0; index < length; index++) {
     const element = array[index];
 
     if (callBackFunction(element) === true) {
-      answerToReturn +=
-        " " + newPushButGivesArrayInstead(newArrayToReturn, element);
+      newArrayToReturn = newPushButGivesArrayInstead(newArrayToReturn, element);
     }
   }
 
-  return answerToReturn.replace(" ", "").split(" ");
+  return newArrayToReturn;
 };
 
 export default {
@@ -68,9 +66,5 @@ export default {
   newPushButGivesArrayInstead,
   newSome,
   newFind,
+  newFilter,
 };
-
-const even = (element) => element % 2 === 0;
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-console.log(newFilter(array, even));

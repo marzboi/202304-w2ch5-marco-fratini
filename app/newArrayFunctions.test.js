@@ -151,3 +151,27 @@ describe("Given the function newSome", () => {
     });
   });
 });
+
+describe("Given the function newFind", () => {
+  describe("When given the the list 1, 2, 3, 4, 5 and searching for numbers larger than 3", () => {
+    test("Then it should return 4", () => {
+      const numbers = [1, 2, 3, 4, 5];
+
+      const expectedResult = 4;
+      const resultReturned = index.newFind(numbers, (item) => item > 3);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the the list 1, 2, 3, 4, 5 and searching for numbers less than 0", () => {
+    test("Then it should return undefined", () => {
+      const numbers = [1, 2, 3, 4, 5];
+
+      const expectedResult = undefined;
+      const resultReturned = index.newFind(numbers, (item) => item < 0);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});

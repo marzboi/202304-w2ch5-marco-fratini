@@ -11,9 +11,9 @@ const newLength = (array) => {
 const newPush = (array, ...newElement) => {
   const openedArray = [...array];
 
-  const newPushedArray = [...openedArray, ...newElement];
+  array = [...openedArray, ...newElement];
 
-  return newLength(newPushedArray);
+  return newLength(array);
 };
 
 const newPushButGivesArrayInstead = (array, ...newElement) => {
@@ -68,3 +68,7 @@ export default {
   newFind,
   newFilter,
 };
+
+const array = [1, 2, 3, 4, 5, 6];
+console.log(newPush(array, 4, 5, 6));
+console.log(array);

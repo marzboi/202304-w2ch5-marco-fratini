@@ -275,3 +275,29 @@ describe("Given the function newIncludes", () => {
     });
   });
 });
+
+describe("Given the function newIndexOf", () => {
+  describe("When given the numbers 1, 2, 3, 4, and we are looking for 3", () => {
+    test("Then it should return 2", () => {
+      const numbers = [1, 2, 3, 4];
+      const numberToSearch = 3;
+
+      const expectedResult = 2;
+      const resultReturned = index.newIndexOf(numbers, numberToSearch);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the numbers 1, 2, 3, 4, 5 and we are looking for 3 starting from position 3", () => {
+    test("Then it should return 2", () => {
+      const numbers = [1, 2, 3, 4, 5];
+      const numberToSearch = 3;
+
+      const expectedResult = -1;
+      const resultReturned = index.newIndexOf(numbers, numberToSearch, 3);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});

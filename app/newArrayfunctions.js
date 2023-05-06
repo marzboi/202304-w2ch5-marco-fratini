@@ -59,7 +59,7 @@ const newShift = (array) => {
 const newSome = (array, callBackFunction) => {
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
-    if (callBackFunction(element) === true) {
+    if (callBackFunction(element)) {
       return true;
     }
   }
@@ -71,12 +71,10 @@ const newFind = (array, callBackFunction) => {
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
 
-    if (callBackFunction(element) === true) {
-      return array[index];
+    if (callBackFunction(element)) {
+      return element;
     }
   }
-
-  return undefined;
 };
 
 const newFilter = (array, callBackFunction) => {

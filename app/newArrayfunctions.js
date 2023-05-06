@@ -123,6 +123,16 @@ const newFindIndex = (array, callBackFunction) => {
   return -1;
 };
 
+const newIncludes = (array, element) => {
+  for (let index = 0; index < array.length; index++) {
+    if (array[index] === element) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
 export default {
   newLength,
   newPush,
@@ -136,4 +146,5 @@ export default {
   newFilter,
   newMap,
   newFindIndex,
+  newIncludes,
 };

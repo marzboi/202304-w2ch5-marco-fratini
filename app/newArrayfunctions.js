@@ -43,9 +43,7 @@ const newSome = (array, callBackFunction) => {
 };
 
 const newFind = (array, callBackFunction) => {
-  const length = newLength(array);
-
-  for (let index = 0; index < length; index++) {
+  for (let index = 0; index < array.length; index++) {
     if (array[index] === callBackFunction) {
       return array[index];
     }
@@ -76,8 +74,3 @@ export default {
   newFind,
   newFilter,
 };
-
-const array = [1, 2, 3];
-
-console.log(newPop(array));
-console.log(array);

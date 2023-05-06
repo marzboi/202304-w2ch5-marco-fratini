@@ -57,11 +57,9 @@ const newShift = (array) => {
 };
 
 const newSome = (array, callBackFunction) => {
-  const length = newLength(array);
-
-  for (let index = 0; index < length; index++) {
+  for (let index = 0; index < array.length; index++) {
     const element = array[index];
-    if (callBackFunction(element) === true) {
+    if (callBackFunction(element)) {
       return true;
     }
   }
@@ -71,8 +69,10 @@ const newSome = (array, callBackFunction) => {
 
 const newFind = (array, callBackFunction) => {
   for (let index = 0; index < array.length; index++) {
-    if (array[index] === callBackFunction) {
-      return array[index];
+    const element = array[index];
+
+    if (callBackFunction(element)) {
+      return element;
     }
   }
 };

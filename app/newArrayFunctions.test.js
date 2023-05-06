@@ -1,4 +1,4 @@
-import index from "./index.js";
+import index from "./newArrayfunctions.js";
 
 describe("Given the function newLength", () => {
   describe("When given the array of 1, 2 ,3", () => {

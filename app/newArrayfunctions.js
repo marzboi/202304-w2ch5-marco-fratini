@@ -23,6 +23,12 @@ const newPushButGivesArrayInstead = (array, ...newElement) => [
   ...newElement,
 ];
 
+const newPop = (array) => {
+  const lastElement = array[array.length - 1];
+  array.length -= 1;
+  return lastElement;
+};
+
 const newSome = (array, callBackFunction) => {
   const length = newLength(array);
 
@@ -37,9 +43,7 @@ const newSome = (array, callBackFunction) => {
 };
 
 const newFind = (array, callBackFunction) => {
-  const length = newLength(array);
-
-  for (let index = 0; index < length; index++) {
+  for (let index = 0; index < array.length; index++) {
     if (array[index] === callBackFunction) {
       return array[index];
     }
@@ -65,6 +69,7 @@ export default {
   newLength,
   newPush,
   newPushButGivesArrayInstead,
+  newPop,
   newSome,
   newFind,
   newFilter,

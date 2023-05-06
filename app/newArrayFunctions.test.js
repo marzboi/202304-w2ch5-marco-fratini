@@ -175,3 +175,27 @@ describe("Given the function newFind", () => {
     });
   });
 });
+
+describe("Given the function newMap", () => {
+  describe("When given the list of 1, 2, 3, 4, 5 and multiply it by 5", () => {
+    test("Then it should return a new list with 5, 10, 15, 20, 25", () => {
+      const numberList = [1, 2, 3, 4, 5];
+
+      const expectedResult = [5, 10, 15, 20, 25];
+      const resultReturned = index.newMap(numberList, (item) => item * 5);
+
+      expect(resultReturned).toStrictEqual(expectedResult);
+    });
+  });
+
+  describe("When given the list of 1, 2, 3, 4, 5 and multiply it by 0", () => {
+    test("Then it should return a new list with 0, 0, 0, 0, 0", () => {
+      const numberList = [1, 2, 3, 4, 5];
+
+      const expectedResult = [0, 0, 0, 0, 0];
+      const resultReturned = index.newMap(numberList, (item) => item * 0);
+
+      expect(resultReturned).toStrictEqual(expectedResult);
+    });
+  });
+});

@@ -9,11 +9,13 @@ const newLength = (array) => {
 };
 
 const newPush = (array, ...newElement) => {
-  const openedArray = [...array];
+  const elementsToAdd = [...newElement];
 
-  array = [...openedArray, ...newElement];
+  for (let index = 0; index < elementsToAdd.length; index++) {
+    array[array.length] = elementsToAdd[index];
+  }
 
-  return newLength(array);
+  return array.length;
 };
 
 const newPushButGivesArrayInstead = (array, ...newElement) => {

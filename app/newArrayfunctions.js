@@ -100,7 +100,7 @@ const newMap = (array, callBackFunction) => {
   return newArrayToReturn;
 };
 
-const newFindIndex = (array) => {
+const newFindIndex = (array, callBackFunction) => {
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
 
@@ -125,3 +125,7 @@ export default {
   newMap,
   newFindIndex,
 };
+
+const array = [1, 2, 3, 4, 5, 6, 7];
+
+console.log(newFindIndex(array, (item) => item > 4));

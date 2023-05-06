@@ -100,6 +100,18 @@ const newMap = (array, callBackFunction) => {
   return newArrayToReturn;
 };
 
+const newFindIndex = (array) => {
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+
+    if (callBackFunction(element)) {
+      return index;
+    }
+  }
+
+  return -1;
+};
+
 export default {
   newLength,
   newPush,
@@ -111,4 +123,5 @@ export default {
   newFind,
   newFilter,
   newMap,
+  newFindIndex,
 };

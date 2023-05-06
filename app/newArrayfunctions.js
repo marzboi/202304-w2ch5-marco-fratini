@@ -64,6 +64,17 @@ const newSome = (array, callBackFunction) => {
   return false;
 };
 
+const newEvery = (array, callBackFunction) => {
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    if (!callBackFunction(element)) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
 const newFind = (array, callBackFunction) => {
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
@@ -120,12 +131,9 @@ export default {
   newUnshift,
   newShift,
   newSome,
+  newEvery,
   newFind,
   newFilter,
   newMap,
   newFindIndex,
 };
-
-const array = [1, 2, 3, 4, 5, 6, 7];
-
-console.log(newFindIndex(array, (item) => item > 4));

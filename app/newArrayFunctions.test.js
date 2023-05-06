@@ -142,10 +142,33 @@ describe("Given the function newSome", () => {
   describe("When given the list of 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 and numbers larger than 10 ", () => {
     test("Then it should return false", () => {
       const array = [1, 2, 3, 4, 5, 6, 7, 8];
-      const even = (element) => element > 10;
 
       const expectedResult = false;
-      const resultReturned = index.newSome(array, even);
+      const resultReturned = index.newSome(array, (element) => element > 10);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});
+
+describe("Given the function newEvery", () => {
+  describe("When given the list 1, 2, 3, 4, 5 and the condition that all numbers are larger than 0", () => {
+    test("Then it should return true", () => {
+      const numbers = [1, 2, 3, 4, 5];
+
+      const expectedResult = true;
+      const resultReturned = index.newEvery(numbers, (item) => item > 0);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the list Cova, Cobal, Coviran and the condition that words are less than 4 letters", () => {
+    test("Then it should return false", () => {
+      const names = ["Cova", "Cobal", "Coviran"];
+
+      const expectedResult = false;
+      const resultReturned = index.newEvery(names, (item) => item.length < 4);
 
       expect(resultReturned).toBe(expectedResult);
     });

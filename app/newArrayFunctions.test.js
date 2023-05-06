@@ -85,7 +85,7 @@ describe("Given the function newUnshift", () => {
       const expectedResult = 4;
       const resultReturned = index.newUnshift(names, nameToAdd);
 
-      expect(resultReturned).toStrictEqual(expectedResult);
+      expect(resultReturned).toBe(expectedResult);
     });
   });
 
@@ -97,7 +97,31 @@ describe("Given the function newUnshift", () => {
       const expectedResult = 5;
       const resultReturned = index.newUnshift(list, numbers);
 
-      expect(resultReturned).toStrictEqual(expectedResult);
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});
+
+describe("Given the function newShift", () => {
+  describe("When given the list of numbers 1, 2, 3", () => {
+    test("Then it should return 1", () => {
+      const list = [1, 2, 3];
+
+      const expectedResult = 1;
+      const resultReturned = index.newShift(list);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the list Alex, Jordi, David", () => {
+    test("Then it should return Alex", () => {
+      const list = ["Alex", "Jordi", "David"];
+
+      const expectedResult = "Alex";
+      const resultReturned = index.newShift(list);
+
+      expect(resultReturned).toBe(expectedResult);
     });
   });
 });

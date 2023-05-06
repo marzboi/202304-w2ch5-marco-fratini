@@ -76,6 +76,20 @@ describe("Given the function newPop", () => {
   });
 });
 
+describe("Given the function newUnshift", () => {
+  describe("When given the list of Cova, Covota and Covita and the element Covax", () => {
+    test("Then it should alter the list to Covax, Cova, Covota and Covita and return 4", () => {
+      const names = ["Cova", "Covota", "Covita"];
+      const nameToAdd = "Covax";
+
+      const expectedResult = 4;
+      const resultReturned = index.newUnshift(names, nameToAdd);
+
+      expect(resultReturned).toStrictEqual(expectedResult);
+    });
+  });
+});
+
 describe("Given the function newSome", () => {
   describe("When given the list of 1, 2, 3, 5 and the callback of even", () => {
     test("Then it should return true", () => {

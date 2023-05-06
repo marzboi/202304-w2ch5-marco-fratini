@@ -23,6 +23,12 @@ const newPushButGivesArrayInstead = (array, ...newElement) => [
   ...newElement,
 ];
 
+const newPop = (array) => {
+  const lastElement = array[array.length - 1];
+  array.length -= 1;
+  return lastElement;
+};
+
 const newSome = (array, callBackFunction) => {
   const length = newLength(array);
 
@@ -65,7 +71,13 @@ export default {
   newLength,
   newPush,
   newPushButGivesArrayInstead,
+  newPop,
   newSome,
   newFind,
   newFilter,
 };
+
+const array = [1, 2, 3];
+
+console.log(newPop(array));
+console.log(array);

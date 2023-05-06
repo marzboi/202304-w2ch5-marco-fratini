@@ -35,11 +35,11 @@ const newSome = (array, callBackFunction) => {
   return false;
 };
 
-const newFind = (array, argument) => {
+const newFind = (array, callBackFunction) => {
   const length = newLength(array);
 
   for (let index = 0; index < length; index++) {
-    if (array[index] === argument) {
+    if (array[index] === callBackFunction) {
       return array[index];
     }
   }
@@ -68,7 +68,3 @@ export default {
   newFind,
   newFilter,
 };
-
-const array = [1, 2, 3, 4, 5, 6];
-console.log(newPush(array, 4, 5, 6));
-console.log(array);

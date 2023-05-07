@@ -286,5 +286,34 @@ main .shift-container div ol li {
   padding-bottom: 10px;
   font-size: 1rem;
 }
+main .some-container h3 {
+  padding: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+main .some-container label {
+  padding: 20px;
+}
+main .some-container input {
+  font-family: inherit;
+  padding: 10px;
+}
+main .some-container button {
+  font-family: inherit;
+  padding: 10px;
+}
+main .some-container div p {
+  padding: 20px;
+  font-size: 1rem;
+}
+main .some-container div ol {
+  display: flex;
+  justify-content: center;
+}
+main .some-container div ol li {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
 
 /*# sourceMappingURL=styles.css.map */

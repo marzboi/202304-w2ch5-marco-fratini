@@ -194,5 +194,29 @@ main .push-container div ol li {
   padding-bottom: 10px;
   font-size: 1rem;
 }
+main .pop-container h3 {
+  padding: 20px;
+  font-size: 1.5rem;
+}
+main .pop-container label {
+  padding: 20px;
+}
+main .pop-container input {
+  font-family: inherit;
+  padding: 10px;
+}
+main .pop-container button {
+  font-family: inherit;
+  padding: 10px;
+}
+main .pop-container div p {
+  padding: 20px;
+  font-size: 1rem;
+}
+main .pop-container div ol li {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
 
 /*# sourceMappingURL=styles.css.map */

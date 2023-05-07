@@ -18,7 +18,16 @@ const sendPop = (userInput) => {
   return makeArray;
 };
 
-const sendUnshift = (userInput, newElement) => {};
+const sendUnshift = (userInput, newElement) => {
+  const makeArray = userInput.value.split(" ");
+  const elementToAdd = newElement.value.split(" ");
+
+  for (let index = 0; index < elementToAdd.length; index++) {
+    arrays.newUnshift(makeArray, elementToAdd[index]);
+  }
+
+  return makeArray;
+};
 
 const registerEventListeners = () => {
   const pushButton = document.querySelector(".push-send");
@@ -54,6 +63,22 @@ const registerEventListeners = () => {
 
       answerToDisplay.innerHTML = arrayComponents;
     }
+  });
+
+  unshiftButton.addEventListener("click", () => {
+    const userArray = document.querySelector(".new-unshift");
+    const userElement = document.querySelector(".new-unshift-add");
+    const answerToDisplay = document.querySelector(".array-elements-unshift");
+
+    const answer = sendUnshift(userArray, userElement);
+
+    let arrayComponents = "";
+
+    for (let index = 0; index < answer.length; index++) {
+      arrayComponents += `<li>${answer[index]}<li>`;
+    }
+
+    answerToDisplay.innerHTML = arrayComponents;
   });
 };
 

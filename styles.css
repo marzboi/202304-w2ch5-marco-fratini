@@ -142,7 +142,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-family: "Press Start 2P", cursive;
   min-width: 375px;
-  height: 100%;
 }
 
 main {
@@ -151,6 +150,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  text-align: center;
 }
 main header {
   margin: 40px;
@@ -173,6 +173,7 @@ main section {
 main .push-container h3 {
   padding: 20px;
   font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 main .push-container label {
   padding: 20px;
@@ -189,6 +190,10 @@ main .push-container div p {
   padding: 20px;
   font-size: 1rem;
 }
+main .push-container div ol {
+  display: flex;
+  justify-content: center;
+}
 main .push-container div ol li {
   padding-left: 20px;
   padding-bottom: 10px;
@@ -197,6 +202,7 @@ main .push-container div ol li {
 main .pop-container h3 {
   padding: 20px;
   font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 main .pop-container label {
   padding: 20px;
@@ -213,7 +219,40 @@ main .pop-container div p {
   padding: 20px;
   font-size: 1rem;
 }
+main .pop-container div ol {
+  display: flex;
+  justify-content: center;
+}
 main .pop-container div ol li {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
+main .unshift-container h3 {
+  padding: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+main .unshift-container label {
+  padding: 20px;
+}
+main .unshift-container input {
+  font-family: inherit;
+  padding: 10px;
+}
+main .unshift-container button {
+  font-family: inherit;
+  padding: 10px;
+}
+main .unshift-container div p {
+  padding: 20px;
+  font-size: 1rem;
+}
+main .unshift-container div ol {
+  display: flex;
+  justify-content: center;
+}
+main .unshift-container div ol li {
   padding-left: 20px;
   padding-bottom: 10px;
   font-size: 1rem;

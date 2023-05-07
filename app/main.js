@@ -1,11 +1,13 @@
 import arrays from "./newArrayfunctions.js";
 
 const sendPush = (userInput, newElement) => {
-  let makeArray = userInput.value.split(" ");
-  makeArray = arrays.createNewArray(makeArray);
-  const elementToAdd = newElement.value;
+  const makeArray = userInput.value.split(" ");
+  const elementToAdd = newElement.value.split(" ");
 
-  arrays.newPush(makeArray, elementToAdd);
+  for (let index = 0; index < elementToAdd.length; index++) {
+    arrays.newPush(makeArray, elementToAdd[index]);
+  }
+
   return makeArray;
 };
 
@@ -15,11 +17,17 @@ const registerEventListeners = () => {
   pushButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-push");
     const userElement = document.querySelector(".new-push-add");
-    const answerToDisplay = document.querySelector(".push-answer");
+    const answerToDisplay = document.querySelector(".array-elements");
 
     const answer = sendPush(userArray, userElement);
+    console.log(answer);
+    let arrayComponents = "";
 
-    answerToDisplay.textContent = answer;
+    for (let index = 0; index < answer.length; index++) {
+      arrayComponents += `<li>${answer[index]}<li>`;
+    }
+
+    answerToDisplay.innerHTML = arrayComponents;
   });
 };
 

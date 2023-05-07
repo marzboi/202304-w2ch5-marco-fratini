@@ -139,11 +139,12 @@ const registerSomeEventListener = () => {
 
   someButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-some");
-    const userCallbackCode = document.querySelector(".new-some-add").value;
-    const userCallback = executeCode(userCallbackCode);
+    const userCallbackCode = userCallBack(
+      document.querySelector(".new-some-add").value
+    );
 
     const answerToDisplay = document.querySelector(".array-elements-some");
-    const answer = sendSome(userArray, userCallback);
+    const answer = sendSome(userArray, userCallbackCode);
 
     answerToDisplay.innerHTML = answer;
   });
@@ -154,11 +155,12 @@ const registerEveryEventListener = () => {
 
   everyButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-every");
-    const userCallbackCode = document.querySelector(".new-every-add").value;
-    const userCallback = executeCode(userCallbackCode);
+    const userCallbackCode = userCallBack(
+      document.querySelector(".new-every-add").value
+    );
 
     const answerToDisplay = document.querySelector(".array-elements-every");
-    const answer = sendEvery(userArray, userCallback);
+    const answer = sendEvery(userArray, userCallbackCode);
 
     answerToDisplay.innerHTML = answer;
   });
@@ -169,11 +171,12 @@ const registerFindEventListener = () => {
 
   findButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-find");
-    const userCallbackCode = document.querySelector(".new-find-add").value;
-    const userCallback = executeCode(userCallbackCode);
+    const userCallbackCode = userCallBack(
+      document.querySelector(".new-find-add").value
+    );
 
     const answerToDisplay = document.querySelector(".array-elements-find");
-    const answer = sendFind(userArray, userCallback);
+    const answer = sendFind(userArray, userCallbackCode);
 
     answerToDisplay.innerHTML = answer;
   });
@@ -184,7 +187,7 @@ const registerFilterEventListener = () => {
 
   filterButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-filter");
-    const userCallbackCode = executeCode(
+    const userCallbackCode = userCallBack(
       document.querySelector(".new-filter-add").value
     );
 
@@ -201,7 +204,7 @@ const registerFilterEventListener = () => {
   });
 };
 
-const executeCode = (code) => {
+const userCallBack = (code) => {
   const func = new Function(`return ${code}`);
   return func();
 };

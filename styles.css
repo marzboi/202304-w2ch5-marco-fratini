@@ -373,5 +373,34 @@ main .find-container div ol li {
   padding-bottom: 10px;
   font-size: 1rem;
 }
+main .filter-container h3 {
+  padding: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+main .filter-container label {
+  padding: 20px;
+}
+main .filter-container input {
+  font-family: inherit;
+  padding: 10px;
+}
+main .filter-container button {
+  font-family: inherit;
+  padding: 10px;
+}
+main .filter-container div p {
+  padding: 20px;
+  font-size: 1rem;
+}
+main .filter-container div ol {
+  display: flex;
+  justify-content: center;
+}
+main .filter-container div ol li {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -51,6 +51,11 @@ const sendFind = (userInput, callbackFunction) => {
   return arrays.newFind(makeArray, callbackFunction);
 };
 
+const sendFilter = (userInput, callbackFunction) => {
+  const makeArray = userInput.value.split(" ");
+  return arrays.newFilter(makeArray, callbackFunction);
+};
+
 const registerPushEventListener = () => {
   const pushButton = document.querySelector(".push-send");
 
@@ -174,6 +179,28 @@ const registerFindEventListener = () => {
   });
 };
 
+const registerFilterEventListener = () => {
+  const filterButton = document.querySelector(".filter-send");
+
+  filterButton.addEventListener("click", () => {
+    const userArray = document.querySelector(".new-filter");
+    const userCallbackCode = executeCode(
+      document.querySelector(".new-filter-add").value
+    );
+
+    const answerToDisplay = document.querySelector(".array-elements-filter");
+    const answer = sendFilter(userArray, userCallbackCode);
+
+    let arrayComponents = "";
+
+    for (let index = 0; index < answer.length; index++) {
+      arrayComponents += `<li>${answer[index]}<li>`;
+    }
+
+    answerToDisplay.innerHTML = arrayComponents;
+  });
+};
+
 const executeCode = (code) => {
   const func = new Function(`return ${code}`);
   return func();
@@ -187,6 +214,7 @@ const startProgram = () => {
   registerSomeEventListener();
   registerEveryEventListener();
   registerFindEventListener();
+  registerFilterEventListener();
 };
 
 startProgram();

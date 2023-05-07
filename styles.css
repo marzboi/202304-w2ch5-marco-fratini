@@ -179,7 +179,7 @@ main .push-container label {
 }
 main .push-container input {
   font-family: inherit;
-  padding: 20px;
+  padding: 10px;
 }
 main .push-container button {
   font-family: inherit;

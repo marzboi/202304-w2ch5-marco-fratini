@@ -153,27 +153,46 @@ main {
   justify-content: space-around;
 }
 main header {
+  margin: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 main header h1 {
   font-size: 2rem;
-  margin: 1.875rem;
+  padding: 30px;
 }
 main header p {
   font-size: 1.625rem;
-  margin: 1.875rem;
-  line-height: 1.4;
+  line-height: 1.5;
+  padding: 20px;
+}
+main section {
+  margin: 40px;
 }
 main .push-container h3 {
+  padding: 20px;
   font-size: 1.5rem;
+}
+main .push-container label {
+  padding: 20px;
 }
 main .push-container input {
   font-family: inherit;
+  padding: 20px;
 }
 main .push-container button {
   font-family: inherit;
+  padding: 10px;
+}
+main .push-container div p {
+  padding: 20px;
+  font-size: 1rem;
+}
+main .push-container div ol li {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

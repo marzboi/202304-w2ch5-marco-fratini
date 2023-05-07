@@ -1,4 +1,4 @@
-import index from "./newArrayfunctions.js";
+import arrays from "./newArrayfunctions.js";
 
 describe("Given the function newLength", () => {
   describe("When given the array of 1, 2 ,3", () => {
@@ -6,7 +6,7 @@ describe("Given the function newLength", () => {
       const array = [1, 2, 3];
 
       const expectedResult = 3;
-      const resultReturned = index.newLength(array);
+      const resultReturned = arrays.newLength(array);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -17,7 +17,7 @@ describe("Given the function newLength", () => {
       const array = [5, 10, 15, 20, 25];
 
       const expectedResult = 5;
-      const resultReturned = index.newLength(array);
+      const resultReturned = arrays.newLength(array);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -33,7 +33,7 @@ describe("Given the function newPush", () => {
       const valueC = 5;
 
       const expectedResult = 5;
-      const resultReturned = index.newPush(array, valueA, valueB, valueC);
+      const resultReturned = arrays.newPush(array, valueA, valueB, valueC);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -45,7 +45,7 @@ describe("Given the function newPush", () => {
       const valueA = ["como", "es", "estas?"];
 
       const expectedResult = 3;
-      const resultReturned = index.newPush(array, valueA);
+      const resultReturned = arrays.newPush(array, valueA);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -58,7 +58,7 @@ describe("Given the function newPop", () => {
       const numbers = [1, 2, 3];
 
       const expectedResult = 3;
-      const resultReturned = index.newPop(numbers);
+      const resultReturned = arrays.newPop(numbers);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -69,7 +69,7 @@ describe("Given the function newPop", () => {
       const names = ["Marco", "Carlos", "Oliver"];
 
       const expectedResult = "Oliver";
-      const resultReturned = index.newPop(names);
+      const resultReturned = arrays.newPop(names);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -83,7 +83,7 @@ describe("Given the function newUnshift", () => {
       const nameToAdd = "Covax";
 
       const expectedResult = 4;
-      const resultReturned = index.newUnshift(names, nameToAdd);
+      const resultReturned = arrays.newUnshift(names, nameToAdd);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -95,7 +95,7 @@ describe("Given the function newUnshift", () => {
       const numbers = [10, 20, 40];
 
       const expectedResult = 5;
-      const resultReturned = index.newUnshift(list, numbers);
+      const resultReturned = arrays.newUnshift(list, numbers);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -108,7 +108,7 @@ describe("Given the function newShift", () => {
       const list = [1, 2, 3];
 
       const expectedResult = 1;
-      const resultReturned = index.newShift(list);
+      const resultReturned = arrays.newShift(list);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -119,7 +119,7 @@ describe("Given the function newShift", () => {
       const list = ["Alex", "Jordi", "David"];
 
       const expectedResult = "Alex";
-      const resultReturned = index.newShift(list);
+      const resultReturned = arrays.newShift(list);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -133,7 +133,7 @@ describe("Given the function newSome", () => {
       const even = (element) => !(element % 2);
 
       const expectedResult = true;
-      const resultReturned = index.newSome(array, even);
+      const resultReturned = arrays.newSome(array, even);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -144,7 +144,7 @@ describe("Given the function newSome", () => {
       const array = [1, 2, 3, 4, 5, 6, 7, 8];
 
       const expectedResult = false;
-      const resultReturned = index.newSome(array, (element) => element > 10);
+      const resultReturned = arrays.newSome(array, (element) => element > 10);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -157,7 +157,7 @@ describe("Given the function newEvery", () => {
       const numbers = [1, 2, 3, 4, 5];
 
       const expectedResult = true;
-      const resultReturned = index.newEvery(numbers, (item) => item > 0);
+      const resultReturned = arrays.newEvery(numbers, (item) => item > 0);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -168,7 +168,7 @@ describe("Given the function newEvery", () => {
       const names = ["Cova", "Cobal", "Coviran"];
 
       const expectedResult = false;
-      const resultReturned = index.newEvery(names, (item) => item.length < 4);
+      const resultReturned = arrays.newEvery(names, (item) => item.length < 4);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -181,7 +181,7 @@ describe("Given the function newFind", () => {
       const numbers = [1, 2, 3, 4, 5];
 
       const expectedResult = 4;
-      const resultReturned = index.newFind(numbers, (item) => item > 3);
+      const resultReturned = arrays.newFind(numbers, (item) => item > 3);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -192,7 +192,7 @@ describe("Given the function newFind", () => {
       const numbers = [1, 2, 3, 4, 5];
 
       const expectedResult = undefined;
-      const resultReturned = index.newFind(numbers, (item) => item < 0);
+      const resultReturned = arrays.newFind(numbers, (item) => item < 0);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -205,7 +205,7 @@ describe("Given the function newMap", () => {
       const numberList = [1, 2, 3, 4, 5];
 
       const expectedResult = [5, 10, 15, 20, 25];
-      const resultReturned = index.newMap(numberList, (item) => item * 5);
+      const resultReturned = arrays.newMap(numberList, (item) => item * 5);
 
       expect(resultReturned).toStrictEqual(expectedResult);
     });
@@ -216,7 +216,7 @@ describe("Given the function newMap", () => {
       const numberList = [1, 2, 3, 4, 5];
 
       const expectedResult = [0, 0, 0, 0, 0];
-      const resultReturned = index.newMap(numberList, (item) => item * 0);
+      const resultReturned = arrays.newMap(numberList, (item) => item * 0);
 
       expect(resultReturned).toStrictEqual(expectedResult);
     });
@@ -229,7 +229,10 @@ describe("Given the function newFindIndex", () => {
       const numberList = [1, 2, 3, 4];
 
       const expectedResult = 2;
-      const resultReturned = index.newFindIndex(numberList, (item) => item > 2);
+      const resultReturned = arrays.newFindIndex(
+        numberList,
+        (item) => item > 2
+      );
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -240,7 +243,7 @@ describe("Given the function newFindIndex", () => {
       const numberList = ["Fu", "Marco", "Luis", "Lu", "Sergio"];
 
       const expectedResult = 1;
-      const resultReturned = index.newFindIndex(
+      const resultReturned = arrays.newFindIndex(
         numberList,
         (item) => item.length > 3
       );
@@ -257,7 +260,7 @@ describe("Given the function newIncludes", () => {
       const wordToSearch = "Cova";
 
       const expectedResult = true;
-      const resultReturned = index.newIncludes(names, wordToSearch);
+      const resultReturned = arrays.newIncludes(names, wordToSearch);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -269,7 +272,7 @@ describe("Given the function newIncludes", () => {
       const numberToSearch = 20;
 
       const expectedResult = false;
-      const resultReturned = index.newIncludes(numbers, numberToSearch);
+      const resultReturned = arrays.newIncludes(numbers, numberToSearch);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -283,7 +286,7 @@ describe("Given the function newIndexOf", () => {
       const numberToSearch = 3;
 
       const expectedResult = 2;
-      const resultReturned = index.newIndexOf(numbers, numberToSearch);
+      const resultReturned = arrays.newIndexOf(numbers, numberToSearch);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -295,7 +298,7 @@ describe("Given the function newIndexOf", () => {
       const numberToSearch = 3;
 
       const expectedResult = -1;
-      const resultReturned = index.newIndexOf(numbers, numberToSearch, 3);
+      const resultReturned = arrays.newIndexOf(numbers, numberToSearch, 3);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -309,7 +312,7 @@ describe("Given the function newJoin", () => {
       const separator = "-";
 
       const expectedResult = "Marco-Antonio";
-      const resultReturned = index.newJoin(names, separator);
+      const resultReturned = arrays.newJoin(names, separator);
 
       expect(resultReturned).toBe(expectedResult);
     });
@@ -321,7 +324,51 @@ describe("Given the function newJoin", () => {
       const separator = ".";
 
       const expectedResult = "";
-      const resultReturned = index.newJoin(names, separator);
+      const resultReturned = arrays.newJoin(names, separator);
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+});
+
+describe("Given the function newReduce", () => {
+  describe("When given the number list with 1, 2, 3, 4, 5 and we wish to add them", () => {
+    test("Then it should return 15", () => {
+      const numbers = [1, 2, 3, 4, 5];
+
+      const expectedResult = 15;
+      const resultReturned = arrays.newReduce(
+        numbers,
+        (valueA, valueB) => valueA + valueB
+      );
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the names with Marco, Antonio and we wish to add them", () => {
+    test("Then it should return MarcoAntonio", () => {
+      const names = ["Marco", "Antonio"];
+
+      const expectedResult = "MarcoAntonio";
+      const resultReturned = arrays.newReduce(
+        names,
+        (valueA, valueB) => valueA + valueB
+      );
+
+      expect(resultReturned).toBe(expectedResult);
+    });
+  });
+
+  describe("When given the number list with 1,2,3,4,5 and we wish to multiply them", () => {
+    test("Then it should return 120", () => {
+      const numbers = [1, 2, 3, 4, 5];
+
+      const expectedResult = 120;
+      const resultReturned = arrays.newReduce(
+        numbers,
+        (valueA, valueB) => valueA * valueB
+      );
 
       expect(resultReturned).toBe(expectedResult);
     });

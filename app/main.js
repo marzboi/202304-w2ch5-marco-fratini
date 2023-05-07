@@ -1,5 +1,10 @@
 import arrays from "./newArrayfunctions.js";
 
+const executeCode = (code) => {
+  const func = new Function(`return ${code}`);
+  return func();
+};
+
 const sendPush = (userInput, newElement) => {
   const makeArray = userInput.value.split(" ");
   const elementToAdd = newElement.value.split(" ");
@@ -34,6 +39,11 @@ const sendShift = (userInput) => {
 
   arrays.newShift(makeArray);
   return makeArray;
+};
+
+const sendSome = (userInput, callbackFunction) => {
+  const makeArray = userInput.value.split(" ");
+  return arrays.newSome(makeArray, callbackFunction);
 };
 
 const registerPushEventListener = () => {
@@ -95,7 +105,7 @@ const registerUnshiftEventListener = () => {
   });
 };
 
-const registerShiftEventListeners = () => {
+const registerShiftEventListener = () => {
   const shiftButton = document.querySelector(".shift-send");
 
   shiftButton.addEventListener("click", () => {
@@ -114,11 +124,27 @@ const registerShiftEventListeners = () => {
   });
 };
 
+const registerSomeEventListener = () => {
+  const someButton = document.querySelector(".some-send");
+
+  someButton.addEventListener("click", () => {
+    const userArray = document.querySelector(".new-some");
+    const userCallbackCode = document.querySelector(".new-some-add").value;
+    const userCallback = executeCode(userCallbackCode);
+
+    const answerToDisplay = document.querySelector(".array-elements-some");
+    const answer = sendSome(userArray, userCallback);
+
+    answerToDisplay.innerHTML = answer;
+  });
+};
+
 const startProgram = () => {
   registerPushEventListener();
   registerPopEventListener();
   registerUnshiftEventListener();
-  registerShiftEventListeners();
+  registerShiftEventListener();
+  registerSomeEventListener();
 };
 
 startProgram();

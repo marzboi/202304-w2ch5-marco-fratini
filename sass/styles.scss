@@ -3,25 +3,29 @@
 @import "responsive";
 
 main {
+  height: 100%;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aliceblue;
     h1 {
-      font-size: 32px;
-      margin: 30px;
+      font-size: rem(32);
+      margin: rem(30);
     }
     p {
-      font-size: 26px;
-      margin: 30px;
+      font-size: rem(26);
+      margin: rem(30);
       line-height: 1.4;
     }
   }
 
   .push-container {
     h3 {
-      font-size: 24px;
+      font-size: rem(24);
     }
     input {
       font-family: inherit;

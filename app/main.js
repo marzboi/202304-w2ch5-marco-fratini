@@ -11,16 +11,23 @@ const sendPush = (userInput, newElement) => {
   return makeArray;
 };
 
+const sendPop = (userInput) => {
+  const makeArray = userInput.value.split(" ");
+
+  arrays.newPop(makeArray);
+  return makeArray;
+};
+
 const registerEventListeners = () => {
   const pushButton = document.querySelector(".push-send");
 
   pushButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-push");
     const userElement = document.querySelector(".new-push-add");
-    const answerToDisplay = document.querySelector(".array-elements");
+    const answerToDisplay = document.querySelector(".array-elements-push");
 
     const answer = sendPush(userArray, userElement);
-    console.log(answer);
+
     let arrayComponents = "";
 
     for (let index = 0; index < answer.length; index++) {

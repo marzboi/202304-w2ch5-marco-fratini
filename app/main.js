@@ -29,10 +29,15 @@ const sendUnshift = (userInput, newElement) => {
   return makeArray;
 };
 
-const registerEventListeners = () => {
+const sendShift = (userInput) => {
+  const makeArray = userInput.value.split(" ");
+
+  arrays.newShift(makeArray);
+  return makeArray;
+};
+
+const registerPushEventListener = () => {
   const pushButton = document.querySelector(".push-send");
-  const popButton = document.querySelector(".pop-send");
-  const unshiftButton = document.querySelector(".unshift-send");
 
   pushButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-push");
@@ -49,6 +54,10 @@ const registerEventListeners = () => {
 
     answerToDisplay.innerHTML = arrayComponents;
   });
+};
+
+const registerPopEventListener = () => {
+  const popButton = document.querySelector(".pop-send");
 
   popButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-pop");
@@ -64,6 +73,10 @@ const registerEventListeners = () => {
       answerToDisplay.innerHTML = arrayComponents;
     }
   });
+};
+
+const registerUnshiftEventListener = () => {
+  const unshiftButton = document.querySelector(".unshift-send");
 
   unshiftButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-unshift");
@@ -82,8 +95,30 @@ const registerEventListeners = () => {
   });
 };
 
+const registerShiftEventListeners = () => {
+  const shiftButton = document.querySelector(".shift-send");
+
+  shiftButton.addEventListener("click", () => {
+    const userArray = document.querySelector(".new-shift");
+    const answerToDisplay = document.querySelector(".array-elements-shift");
+
+    const answer = sendShift(userArray);
+
+    let arrayComponents = "";
+
+    for (let index = 0; index < answer.length; index++) {
+      arrayComponents += `<li>${answer[index]}<li>`;
+
+      answerToDisplay.innerHTML = arrayComponents;
+    }
+  });
+};
+
 const startProgram = () => {
-  registerEventListeners();
+  registerPushEventListener();
+  registerPopEventListener();
+  registerUnshiftEventListener();
+  registerShiftEventListeners();
 };
 
 startProgram();

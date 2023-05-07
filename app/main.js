@@ -18,9 +18,12 @@ const sendPop = (userInput) => {
   return makeArray;
 };
 
+const sendUnshift = (userInput, newElement) => {};
+
 const registerEventListeners = () => {
   const pushButton = document.querySelector(".push-send");
   const popButton = document.querySelector(".pop-send");
+  const unshiftButton = document.querySelector(".unshift-send");
 
   pushButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-push");

@@ -46,6 +46,11 @@ const sendEvery = (userInput, callbackFunction) => {
   return arrays.newEvery(makeArray, callbackFunction);
 };
 
+const sendFind = (userInput, callbackFunction) => {
+  const makeArray = userInput.value.split(" ");
+  return arrays.newFind(makeArray, callbackFunction);
+};
+
 const registerPushEventListener = () => {
   const pushButton = document.querySelector(".push-send");
 
@@ -154,6 +159,21 @@ const registerEveryEventListener = () => {
   });
 };
 
+const registerFindEventListener = () => {
+  const findButton = document.querySelector(".find-send");
+
+  findButton.addEventListener("click", () => {
+    const userArray = document.querySelector(".new-find");
+    const userCallbackCode = document.querySelector(".new-find-add").value;
+    const userCallback = executeCode(userCallbackCode);
+
+    const answerToDisplay = document.querySelector(".array-elements-find");
+    const answer = sendFind(userArray, userCallback);
+
+    answerToDisplay.innerHTML = answer;
+  });
+};
+
 const executeCode = (code) => {
   const func = new Function(`return ${code}`);
   return func();
@@ -166,6 +186,7 @@ const startProgram = () => {
   registerShiftEventListener();
   registerSomeEventListener();
   registerEveryEventListener();
+  registerFindEventListener();
 };
 
 startProgram();

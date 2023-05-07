@@ -162,14 +162,14 @@ const newJoin = (array, separator) => {
 };
 
 const newReduce = (array, callBackFunction) => {
-  let finalResult = array[0];
+  let accumulator = array[0];
 
   for (let index = 1; index < array.length; index++) {
-    const element = array[index];
-    finalResult = callBackFunction(finalResult, element);
+    const currentValue = array[index];
+    accumulator = callBackFunction(accumulator, currentValue);
   }
 
-  return finalResult;
+  return accumulator;
 };
 
 export default {

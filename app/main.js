@@ -20,6 +20,7 @@ const sendPop = (userInput) => {
 
 const registerEventListeners = () => {
   const pushButton = document.querySelector(".push-send");
+  const popButton = document.querySelector(".pop-send");
 
   pushButton.addEventListener("click", () => {
     const userArray = document.querySelector(".new-push");
@@ -35,6 +36,21 @@ const registerEventListeners = () => {
     }
 
     answerToDisplay.innerHTML = arrayComponents;
+  });
+
+  popButton.addEventListener("click", () => {
+    const userArray = document.querySelector(".new-pop");
+    const answerToDisplay = document.querySelector(".array-elements-pop");
+
+    const answer = sendPop(userArray);
+
+    let arrayComponents = "";
+
+    for (let index = 0; index < answer.length; index++) {
+      arrayComponents += `<li>${answer[index]}<li>`;
+
+      answerToDisplay.innerHTML = arrayComponents;
+    }
   });
 };
 

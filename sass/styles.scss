@@ -60,4 +60,37 @@ main {
       }
     }
   }
+
+  .pop-container {
+    h3 {
+      padding: 20px;
+      font-size: rem(24);
+    }
+    label {
+      padding: 20px;
+    }
+    input {
+      font-family: inherit;
+      padding: 10px;
+    }
+
+    button {
+      font-family: inherit;
+      padding: 10px;
+    }
+
+    div {
+      p {
+        padding: 20px;
+        font-size: rem(16);
+      }
+      ol {
+        li {
+          padding-left: 20px;
+          padding-bottom: 10px;
+          font-size: rem(16);
+        }
+      }
+    }
+  }
 }

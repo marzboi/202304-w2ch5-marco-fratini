@@ -218,5 +218,29 @@ main .pop-container div ol li {
   padding-bottom: 10px;
   font-size: 1rem;
 }
+main .unshift-container h3 {
+  padding: 20px;
+  font-size: 1.5rem;
+}
+main .unshift-container label {
+  padding: 20px;
+}
+main .unshift-container input {
+  font-family: inherit;
+  padding: 10px;
+}
+main .unshift-container button {
+  font-family: inherit;
+  padding: 10px;
+}
+main .unshift-container div p {
+  padding: 20px;
+  font-size: 1rem;
+}
+main .unshift-container div ol li {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
 
 /*# sourceMappingURL=styles.css.map */

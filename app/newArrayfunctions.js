@@ -162,9 +162,9 @@ const newJoin = (array, separator) => {
 };
 
 const newReduce = (array, callBackFunction) => {
-  let finalResult = 0;
+  let finalResult = array[0];
 
-  for (let index = 0; index < array.length; index++) {
+  for (let index = 1; index < array.length; index++) {
     const element = array[index];
     finalResult = callBackFunction(finalResult, element);
   }
@@ -189,19 +189,4 @@ export default {
   newIndexOf,
   newJoin,
   newReduce,
-};
-
-const newReduce = (array, callBackFunction, initialValue) => {
-  let finalResult = initialValue !== undefined ? initialValue : array[0];
-
-  for (
-    let index = initialValue !== undefined ? 0 : 1;
-    index < array.length;
-    index++
-  ) {
-    const element = array[index];
-    finalResult = callBackFunction(finalResult, element);
-  }
-
-  return finalResult;
 };

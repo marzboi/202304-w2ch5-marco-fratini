@@ -41,6 +41,11 @@ const sendSome = (userInput, callbackFunction) => {
   return arrays.newSome(makeArray, callbackFunction);
 };
 
+const sendEvery = (userInput, callbackFunction) => {
+  const makeArray = userInput.value.split(" ");
+  return arrays.newEvery(makeArray, callbackFunction);
+};
+
 const registerPushEventListener = () => {
   const pushButton = document.querySelector(".push-send");
 
@@ -134,6 +139,21 @@ const registerSomeEventListener = () => {
   });
 };
 
+const registerEveryEventListener = () => {
+  const everyButton = document.querySelector(".every-send");
+
+  everyButton.addEventListener("click", () => {
+    const userArray = document.querySelector(".new-every");
+    const userCallbackCode = document.querySelector(".new-every-add").value;
+    const userCallback = executeCode(userCallbackCode);
+
+    const answerToDisplay = document.querySelector(".array-elements-every");
+    const answer = sendEvery(userArray, userCallback);
+
+    answerToDisplay.innerHTML = answer;
+  });
+};
+
 const executeCode = (code) => {
   const func = new Function(`return ${code}`);
   return func();
@@ -145,6 +165,7 @@ const startProgram = () => {
   registerUnshiftEventListener();
   registerShiftEventListener();
   registerSomeEventListener();
+  registerEveryEventListener();
 };
 
 startProgram();

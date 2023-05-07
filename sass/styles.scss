@@ -208,4 +208,40 @@ main {
       }
     }
   }
+
+  .every-container {
+    h3 {
+      padding: 20px;
+      font-size: rem(24);
+      margin-bottom: 10px;
+    }
+    label {
+      padding: 20px;
+    }
+    input {
+      font-family: inherit;
+      padding: 10px;
+    }
+
+    button {
+      font-family: inherit;
+      padding: 10px;
+    }
+
+    div {
+      p {
+        padding: 20px;
+        font-size: rem(16);
+      }
+      ol {
+        display: flex;
+        justify-content: center;
+        li {
+          padding-left: 20px;
+          padding-bottom: 10px;
+          font-size: rem(16);
+        }
+      }
+    }
+  }
 }

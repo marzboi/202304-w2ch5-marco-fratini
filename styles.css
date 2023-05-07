@@ -315,5 +315,34 @@ main .some-container div ol li {
   padding-bottom: 10px;
   font-size: 1rem;
 }
+main .every-container h3 {
+  padding: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+main .every-container label {
+  padding: 20px;
+}
+main .every-container input {
+  font-family: inherit;
+  padding: 10px;
+}
+main .every-container button {
+  font-family: inherit;
+  padding: 10px;
+}
+main .every-container div p {
+  padding: 20px;
+  font-size: 1rem;
+}
+main .every-container div ol {
+  display: flex;
+  justify-content: center;
+}
+main .every-container div ol li {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
 
 /*# sourceMappingURL=styles.css.map */

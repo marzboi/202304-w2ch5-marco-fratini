@@ -1,10 +1,5 @@
 import arrays from "./newArrayfunctions.js";
 
-const executeCode = (code) => {
-  const func = new Function(`return ${code}`);
-  return func();
-};
-
 const sendPush = (userInput, newElement) => {
   const makeArray = userInput.value.split(" ");
   const elementToAdd = newElement.value.split(" ");
@@ -137,6 +132,11 @@ const registerSomeEventListener = () => {
 
     answerToDisplay.innerHTML = answer;
   });
+};
+
+const executeCode = (code) => {
+  const func = new Function(`return ${code}`);
+  return func();
 };
 
 const startProgram = () => {

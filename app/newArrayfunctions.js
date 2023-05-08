@@ -9,10 +9,8 @@ const newLength = (array) => {
 };
 
 const newPush = (array, ...newElement) => {
-  const elementsToAdd = [...newElement];
-
-  for (let index = 0; index < elementsToAdd.length; index++) {
-    array[array.length] = elementsToAdd[index];
+  for (let index = 0; index < newElement.length; index++) {
+    array[array.length] = newElement[index];
   }
 
   return array.length;
@@ -83,6 +81,8 @@ const newFind = (array, callBackFunction) => {
       return element;
     }
   }
+
+  return -1;
 };
 
 const newFilter = (array, callBackFunction) => {
@@ -149,8 +149,8 @@ const newIndexOf = (array, element, position) => {
 };
 
 const newJoin = (array, separator) => {
-  const glue = separator || "";
-  let newString = "";
+  const glue = separator || '';
+  let newString = '';
   for (let index = 0; index < array.length; index++) {
     newString += array[index];
     if (index < array.length - 1) {
@@ -190,3 +190,7 @@ export default {
   newJoin,
   newReduce,
 };
+
+const array = [1, 2, 3];
+console.log(newUnshift(array, 2, 3));
+console.log(array);

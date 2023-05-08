@@ -9,10 +9,8 @@ const newLength = (array) => {
 };
 
 const newPush = (array, ...newElement) => {
-  const elementsToAdd = [...newElement];
-
-  for (let index = 0; index < elementsToAdd.length; index++) {
-    array[array.length] = elementsToAdd[index];
+  for (let index = 0; index < newElement.length; index++) {
+    array[array.length] = newElement[index];
   }
 
   return array.length;
@@ -83,6 +81,8 @@ const newFind = (array, callBackFunction) => {
       return element;
     }
   }
+
+  return -1;
 };
 
 const newFilter = (array, callBackFunction) => {
@@ -126,10 +126,9 @@ const newFindIndex = (array, callBackFunction) => {
   return -1;
 };
 
-const newIncludes = (array, element, position) => {
-  let index = position || 0;
-  for (index; index < array.length; index++) {
-    if (array[index] === element) {
+const newIncludes = (array, element, position = 0) => {
+  for (position; position < array.length; position++) {
+    if (array[position] === element) {
       return true;
     }
   }
@@ -137,32 +136,30 @@ const newIncludes = (array, element, position) => {
   return false;
 };
 
-const newIndexOf = (array, element, position) => {
-  let index = position || 0;
-  for (index; index < array.length; index++) {
-    if (array[index] === element) {
-      return index;
+const newIndexOf = (array, element, position = 0) => {
+  for (position; position < array.length; position++) {
+    if (array[position] === element) {
+      return position;
     }
   }
 
   return -1;
 };
 
-const newJoin = (array, separator) => {
-  const glue = separator || "";
-  let newString = "";
+const newJoin = (array, separator = '') => {
+  let newString = '';
   for (let index = 0; index < array.length; index++) {
     newString += array[index];
     if (index < array.length - 1) {
-      newString += glue;
+      newString += separator;
     }
   }
 
   return newString;
 };
 
-const newReduce = (array, callBackFunction) => {
-  let accumulator = array[0];
+const newReduce = (array, callBackFunction, initialValue) => {
+  let accumulator = initialValue || array[0];
 
   for (let index = 1; index < array.length; index++) {
     const currentValue = array[index];
@@ -190,3 +187,7 @@ export default {
   newJoin,
   newReduce,
 };
+
+const array = [1, 2, 3];
+console.log(newUnshift(array, 2, 3));
+console.log(array);

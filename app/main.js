@@ -1,8 +1,8 @@
-import arrays from "./newArrayfunctions.js";
+import arrays from './newArrayfunctions.js';
 
 const sendPush = (userInput, newElement) => {
-  const makeArray = userInput.value.split(" ");
-  const elementToAdd = newElement.value.split(" ");
+  const makeArray = userInput.value.split(' ');
+  const elementToAdd = newElement.value.split(' ');
 
   for (let index = 0; index < elementToAdd.length; index++) {
     arrays.newPush(makeArray, elementToAdd[index]);
@@ -12,17 +12,17 @@ const sendPush = (userInput, newElement) => {
 };
 
 const sendPop = (userInput) => {
-  const makeArray = userInput.value.split(" ");
+  const makeArray = userInput.value.split(' ');
 
   arrays.newPop(makeArray);
   return makeArray;
 };
 
 const sendUnshift = (userInput, newElement) => {
-  const makeArray = userInput.value.split(" ");
-  const elementToAdd = newElement.value.split(" ");
+  const makeArray = userInput.value.split(' ');
+  const elementToAdd = newElement.value.split(' ');
 
-  for (let index = 0; index < elementToAdd.length; index++) {
+  for (let index = elementToAdd.length; index > elementToAdd.length; index--) {
     arrays.newUnshift(makeArray, elementToAdd[index]);
   }
 
@@ -30,48 +30,48 @@ const sendUnshift = (userInput, newElement) => {
 };
 
 const sendShift = (userInput) => {
-  const makeArray = userInput.value.split(" ");
+  const makeArray = userInput.value.split(' ');
 
   arrays.newShift(makeArray);
   return makeArray;
 };
 
 const sendSome = (userInput, callbackFunction) => {
-  const makeArray = userInput.value.split(" ");
+  const makeArray = userInput.value.split(' ');
   return arrays.newSome(makeArray, callbackFunction);
 };
 
 const sendEvery = (userInput, callbackFunction) => {
-  const makeArray = userInput.value.split(" ");
+  const makeArray = userInput.value.split(' ');
   return arrays.newEvery(makeArray, callbackFunction);
 };
 
 const sendFind = (userInput, callbackFunction) => {
-  const makeArray = userInput.value.split(" ");
+  const makeArray = userInput.value.split(' ');
   return arrays.newFind(makeArray, callbackFunction);
 };
 
 const sendFilter = (userInput, callbackFunction) => {
-  const makeArray = userInput.value.split(" ");
+  const makeArray = userInput.value.split(' ');
   return arrays.newFilter(makeArray, callbackFunction);
 };
 
 const sendMap = (userInput, callbackFunction) => {
-  const makeArray = userInput.value.split(" ");
+  const makeArray = userInput.value.split(' ');
   return arrays.newMap(makeArray, callbackFunction);
 };
 
 const registerPushEventListener = () => {
-  const pushButton = document.querySelector(".push-send");
+  const pushButton = document.querySelector('.push-send');
 
-  pushButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-push");
-    const userElement = document.querySelector(".new-push-add");
-    const answerToDisplay = document.querySelector(".array-elements-push");
+  pushButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-push');
+    const userElement = document.querySelector('.new-push-add');
+    const answerToDisplay = document.querySelector('.array-elements-push');
 
     const answer = sendPush(userArray, userElement);
 
-    let arrayComponents = "";
+    let arrayComponents = '';
 
     for (let index = 0; index < answer.length; index++) {
       arrayComponents += `<li>${answer[index]}<li>`;
@@ -82,15 +82,15 @@ const registerPushEventListener = () => {
 };
 
 const registerPopEventListener = () => {
-  const popButton = document.querySelector(".pop-send");
+  const popButton = document.querySelector('.pop-send');
 
-  popButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-pop");
-    const answerToDisplay = document.querySelector(".array-elements-pop");
+  popButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-pop');
+    const answerToDisplay = document.querySelector('.array-elements-pop');
 
     const answer = sendPop(userArray);
 
-    let arrayComponents = "";
+    let arrayComponents = '';
 
     for (let index = 0; index < answer.length; index++) {
       arrayComponents += `<li>${answer[index]}<li>`;
@@ -101,16 +101,16 @@ const registerPopEventListener = () => {
 };
 
 const registerUnshiftEventListener = () => {
-  const unshiftButton = document.querySelector(".unshift-send");
+  const unshiftButton = document.querySelector('.unshift-send');
 
-  unshiftButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-unshift");
-    const userElement = document.querySelector(".new-unshift-add");
-    const answerToDisplay = document.querySelector(".array-elements-unshift");
+  unshiftButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-unshift');
+    const userElement = document.querySelector('.new-unshift-add');
+    const answerToDisplay = document.querySelector('.array-elements-unshift');
 
     const answer = sendUnshift(userArray, userElement);
 
-    let arrayComponents = "";
+    let arrayComponents = '';
 
     for (let index = 0; index < answer.length; index++) {
       arrayComponents += `<li>${answer[index]}<li>`;
@@ -121,15 +121,15 @@ const registerUnshiftEventListener = () => {
 };
 
 const registerShiftEventListener = () => {
-  const shiftButton = document.querySelector(".shift-send");
+  const shiftButton = document.querySelector('.shift-send');
 
-  shiftButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-shift");
-    const answerToDisplay = document.querySelector(".array-elements-shift");
+  shiftButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-shift');
+    const answerToDisplay = document.querySelector('.array-elements-shift');
 
     const answer = sendShift(userArray);
 
-    let arrayComponents = "";
+    let arrayComponents = '';
 
     for (let index = 0; index < answer.length; index++) {
       arrayComponents += `<li>${answer[index]}<li>`;
@@ -140,15 +140,15 @@ const registerShiftEventListener = () => {
 };
 
 const registerSomeEventListener = () => {
-  const someButton = document.querySelector(".some-send");
+  const someButton = document.querySelector('.some-send');
 
-  someButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-some");
+  someButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-some');
     const userCallbackCode = userCallBack(
-      document.querySelector(".new-some-add").value
+      document.querySelector('.new-some-add').value
     );
 
-    const answerToDisplay = document.querySelector(".array-elements-some");
+    const answerToDisplay = document.querySelector('.array-elements-some');
     const answer = sendSome(userArray, userCallbackCode);
 
     answerToDisplay.innerHTML = answer;
@@ -156,31 +156,31 @@ const registerSomeEventListener = () => {
 };
 
 const registerEveryEventListener = () => {
-  const everyButton = document.querySelector(".every-send");
+  const everyButton = document.querySelector('.every-send');
 
-  everyButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-every");
+  everyButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-every');
     const userCallbackCode = userCallBack(
-      document.querySelector(".new-every-add").value
+      document.querySelector('.new-every-add').value
     );
 
-    const answerToDisplay = document.querySelector(".array-elements-every");
-    const answer = sendEvery(userArray, userCallbackCode);
+    const answerToDisplay = document.querySelector('.array-elements-every');
+    const answer = sendEvery(userArray, `${userCallbackCode}`);
 
     answerToDisplay.innerHTML = answer;
   });
 };
 
 const registerFindEventListener = () => {
-  const findButton = document.querySelector(".find-send");
+  const findButton = document.querySelector('.find-send');
 
-  findButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-find");
+  findButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-find');
     const userCallbackCode = userCallBack(
-      document.querySelector(".new-find-add").value
+      document.querySelector('.new-find-add').value
     );
 
-    const answerToDisplay = document.querySelector(".array-elements-find");
+    const answerToDisplay = document.querySelector('.array-elements-find');
     const answer = sendFind(userArray, userCallbackCode);
 
     answerToDisplay.innerHTML = answer;
@@ -188,18 +188,18 @@ const registerFindEventListener = () => {
 };
 
 const registerFilterEventListener = () => {
-  const filterButton = document.querySelector(".filter-send");
+  const filterButton = document.querySelector('.filter-send');
 
-  filterButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-filter");
+  filterButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-filter');
     const userCallbackCode = userCallBack(
-      document.querySelector(".new-filter-add").value
+      document.querySelector('.new-filter-add').value
     );
 
-    const answerToDisplay = document.querySelector(".array-elements-filter");
+    const answerToDisplay = document.querySelector('.array-elements-filter');
     const answer = sendFilter(userArray, userCallbackCode);
 
-    let arrayComponents = "";
+    let arrayComponents = '';
 
     for (let index = 0; index < answer.length; index++) {
       arrayComponents += `<li>${answer[index]}<li>`;
@@ -210,18 +210,18 @@ const registerFilterEventListener = () => {
 };
 
 const registerMapEventListener = () => {
-  const mapButton = document.querySelector(".map-send");
+  const mapButton = document.querySelector('.map-send');
 
-  mapButton.addEventListener("click", () => {
-    const userArray = document.querySelector(".new-map");
+  mapButton.addEventListener('click', () => {
+    const userArray = document.querySelector('.new-map');
     const userCallbackCode = userCallBack(
-      document.querySelector(".new-map-add").value
+      document.querySelector('.new-map-add').value
     );
 
-    const answerToDisplay = document.querySelector(".array-elements-map");
+    const answerToDisplay = document.querySelector('.array-elements-map');
     const answer = sendMap(userArray, userCallbackCode);
 
-    let arrayComponents = "";
+    let arrayComponents = '';
 
     for (let index = 0; index < answer.length; index++) {
       arrayComponents += `<li>${answer[index]}<li>`;

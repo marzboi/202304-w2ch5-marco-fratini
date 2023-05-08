@@ -161,8 +161,8 @@ const newJoin = (array, separator) => {
   return newString;
 };
 
-const newReduce = (array, callBackFunction) => {
-  let accumulator = array[0];
+const newReduce = (array, callBackFunction, initialValue) => {
+  let accumulator = initialValue || array[0];
 
   for (let index = 1; index < array.length; index++) {
     const currentValue = array[index];

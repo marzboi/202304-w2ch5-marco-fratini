@@ -205,8 +205,8 @@ const registerFilterEventListener = () => {
 };
 
 const userCallBack = (code) => {
-  const func = new Function(`return ${code}`);
-  return func();
+  const callbackFunction = new Function(`return ${code}`);
+  return callbackFunction();
 };
 
 const startProgram = () => {

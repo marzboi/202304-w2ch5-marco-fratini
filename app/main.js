@@ -56,6 +56,11 @@ const sendFilter = (userInput, callbackFunction) => {
   return arrays.newFilter(makeArray, callbackFunction);
 };
 
+const sendMap = (userInput, callbackFunction) => {
+  const makeArray = userInput.value.split(" ");
+  return arrays.newMap(makeArray, callbackFunction);
+};
+
 const registerPushEventListener = () => {
   const pushButton = document.querySelector(".push-send");
 
@@ -204,6 +209,28 @@ const registerFilterEventListener = () => {
   });
 };
 
+const registerMapEventListener = () => {
+  const mapButton = document.querySelector(".map-send");
+
+  mapButton.addEventListener("click", () => {
+    const userArray = document.querySelector(".new-map");
+    const userCallbackCode = userCallBack(
+      document.querySelector(".new-map-add").value
+    );
+
+    const answerToDisplay = document.querySelector(".array-elements-map");
+    const answer = sendMap(userArray, userCallbackCode);
+
+    let arrayComponents = "";
+
+    for (let index = 0; index < answer.length; index++) {
+      arrayComponents += `<li>${answer[index]}<li>`;
+    }
+
+    answerToDisplay.innerHTML = arrayComponents;
+  });
+};
+
 const userCallBack = (code) => {
   const callbackFunction = new Function(`return ${code}`);
   return callbackFunction();
@@ -218,6 +245,7 @@ const startProgram = () => {
   registerEveryEventListener();
   registerFindEventListener();
   registerFilterEventListener();
+  registerMapEventListener();
 };
 
 startProgram();
